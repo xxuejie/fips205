@@ -1,4 +1,4 @@
-#![no_std]
+// #![no_std]
 #![deny(clippy::pedantic, warnings, missing_docs, unsafe_code)]
 // Most of the 'allow' category...
 #![deny(absolute_paths_not_starting_with_crate, dead_code)]

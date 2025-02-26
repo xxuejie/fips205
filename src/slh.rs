@@ -328,6 +328,16 @@ pub(crate) fn slh_verify_internal<
     let idx_leaf = helpers::to_int(tmp_idx_leaf, (h32 + 8 * d32 - 1) / (8 * d32))
         & (u64::MAX >> (64 - h32 / d32));
 
+    {
+        print!("Hashed message: ");
+        for b in md {
+            print!("{:02x}", b);
+        }
+        println!();
+
+        println!("Tree: {:016x}, idx_leaf: {:08x}", idx_tree, idx_leaf);
+    }
+
     // 14: ADRS.setTreeAddress(idx_tree)    ▷ Compute FORS public key
     adrs.set_tree_address(idx_tree);
 
